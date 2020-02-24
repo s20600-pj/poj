@@ -1,6 +1,6 @@
 package com.company;
 
-public class Main {
+public class Flags {
 
     public enum FlagSize {Small, Medium, Large}
 
@@ -37,13 +37,13 @@ public class Main {
 
         for (int i = 2; i < numberSize / 4; i++) { // Pseudo kółko w środku
             for (int x = 0; x < numberSize; x++) {
-                if(i <= numberSize / 8){
-                    if (x > (numberSize/2)-((numberSize/6)+i) && x < (numberSize/2)+((numberSize/6)+i))
+                if (i <= numberSize / 8) {
+                    if (x > (numberSize / 2) - ((numberSize / 6) + i) && x < (numberSize / 2) + ((numberSize / 6) + i))
                         System.out.print("*");
                     else
                         System.out.print("-");
-                }else{
-                    if (x > (numberSize/2)-((numberSize/2)-i-1) && x < (numberSize/2)+((numberSize/2)-i-1))
+                } else {
+                    if (x > (numberSize / 2) - ((numberSize / 2) - i - 1) && x < (numberSize / 2) + ((numberSize / 2) - i - 1))
                         System.out.print("*");
                     else
                         System.out.print("-");
