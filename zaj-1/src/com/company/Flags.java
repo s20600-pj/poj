@@ -1,17 +1,41 @@
+/* Print Polish and Japan flag
+Author: Sandro Sobczyński
+ */
 package com.company;
+
+import java.util.Scanner;
 
 public class Flags {
 
     public enum FlagSize {Small, Medium, Large}
 
     public static void main(String[] args) {
-        DrawPolishFlag(FlagSize.Medium);
-        System.out.print("\n---\n\n"); // Odstęp
-        DrawJapanFlag(FlagSize.Medium);
+        System.out.print("Please choose 1 for small flags, 2 for medium or 3 for large flags: ");
+        var flagSize = getFlagSize();
+        if (flagSize != null) {
+            drawPolishFlag(flagSize);
+            System.out.print("\n---\n\n"); // Odstęp
+            drawJapanFlag(flagSize);
+        } else System.out.print("Incorrect size");
     }
 
-    private static void DrawPolishFlag(FlagSize size) {
-        var numberSize = GetNumberSize(size);
+    private static FlagSize getFlagSize() {
+        var scanner = new Scanner(System.in);
+        var input = scanner.nextLine();
+        switch (input) {
+            case "1":
+                return FlagSize.Small;
+            case "2":
+                return FlagSize.Medium;
+            case "3":
+                return FlagSize.Large;
+            default:
+                return null;
+        }
+    }
+
+    private static void drawPolishFlag(FlagSize size) {
+        var numberSize = getNumberSize(size);
 
         for (int i = 0; i < numberSize / 6; i++) {
             for (int x = 0; x < numberSize; x++)
@@ -26,8 +50,8 @@ public class Flags {
         }
     }
 
-    private static void DrawJapanFlag(FlagSize size) {
-        var numberSize = GetNumberSize(size);
+    private static void drawJapanFlag(FlagSize size) {
+        var numberSize = getNumberSize(size);
 
         for (int i = 1; i < numberSize / 8; i++) { // Góra flagi
             for (int x = 0; x < numberSize; x++)
@@ -59,7 +83,7 @@ public class Flags {
         }
     }
 
-    private static int GetNumberSize(FlagSize size) {
+    private static int getNumberSize(FlagSize size) {
         switch (size) {
             case Small:
                 return 16;
