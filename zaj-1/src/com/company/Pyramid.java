@@ -1,4 +1,4 @@
-/* Bmi calculator
+/* Pyramid drawer
 Author: Sandro Sobczyński
  */
 package com.company;

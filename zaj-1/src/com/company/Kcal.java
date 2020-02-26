@@ -1,4 +1,4 @@
-/* Bmi calculator
+/* Kcal calculator
 Author: Sandro Sobczyński
  */
 package com.company;
