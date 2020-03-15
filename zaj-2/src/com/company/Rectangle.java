@@ -1,6 +1,5 @@
-/* Human class
-Author: Sandro Sobczyński
- */
+/* Author: Sandro Sobczyński */
+
 package com.company;
 
 public class Rectangle {
