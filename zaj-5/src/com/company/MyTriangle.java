@@ -43,4 +43,5 @@ public class MyTriangle {
             return "Scalene";
         }
     }
+
 }
